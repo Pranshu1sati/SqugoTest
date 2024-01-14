@@ -111,7 +111,13 @@ export const Navbar = () => {
                       : "foreground"
                   }
                   className="w-full"
-                  href="#"
+                 href={
+                    index === 0
+                      ? "/"
+                      : index === 2 || index === 3
+                      ? `/${item.toLowerCase().replace(/\s/, "-")}`
+                      : `/${item.toLowerCase()}`
+                  }
                   size="lg"
                 >
                   {item}
