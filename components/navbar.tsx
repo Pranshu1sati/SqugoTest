@@ -46,7 +46,7 @@ export const Navbar = () => {
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle className="sm:hidden" />
       </NavbarContent>
-      <NavbarBrand className="justify-start mr-28 sm:z-10 sm:mb-[0.4rem]">
+      <NavbarBrand className="justify-start mr-28 sm:z-10 sm:mb-[0.4rem] child h-full overflow-clip">
         <Image
           src={"/Logo.png"}
           alt="Logo"
