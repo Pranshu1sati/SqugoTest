@@ -1,6 +1,18 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import {
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Button,
+  useDisclosure,
+  Checkbox,
+  Input,
+  Link,
+} from "@nextui-org/react";
 // import { urlForImage } from "@/sanity/lib/image"
 
 // import { SanityProduct } from "@/config/inventory"
@@ -13,12 +25,13 @@ interface ProductGalleryProps {
 }
 
 export function ProductGallery({ productImg }: ProductGalleryProps) {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
   console.log(productImg);
   const [selectedImage, setImage] = useState(0);
   return (
     <div className="flex flex-col-reverse">
       {/* Image Grid */}
-      <div className="mx-auto mt-6 hidden w-full max-w-2xl sm:block lg:max-w-none">
+      <div className="mx-auto mt-6  w-full max-w-2xl sm:block lg:max-w-none px-6">
         <ul className="grid grid-cols-4 gap-6">
           {productImg.images.map((image: any, index: number) => (
             <div
@@ -54,9 +67,37 @@ export function ProductGallery({ productImg }: ProductGalleryProps) {
           alt="img here"
           width={600}
           height={750}
+          onClick={onOpen}
           className="h-full w-full border-2 border-gray-200 object-cover object-center shadow-sm dark:border-gray-800 sm:rounded-lg"
           //   placeholder="blur"
         />
+
+        <Modal
+          isOpen={isOpen}
+          onOpenChange={onOpenChange}
+          placement="top-center"
+          size="2xl"
+        >
+          <ModalContent>
+            {(onClose) => (
+              <>
+                <ModalBody>
+                  <div className="flex justify-center">
+                    <Image
+                      src={productImg.images[selectedImage]}
+                      alt="Selected Product Image"
+                      width={8000} // Adjust width as needed
+                      height={10000} // Adjust height as needed
+                      className="object-cover"
+                      //   placeholder="blur" // Uncomment if you use blur placeholder
+                    />
+                  </div>
+                </ModalBody>
+                <ModalFooter></ModalFooter>
+              </>
+            )}
+          </ModalContent>
+        </Modal>
       </div>
     </div>
   );

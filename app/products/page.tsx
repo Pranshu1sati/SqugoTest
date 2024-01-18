@@ -37,7 +37,7 @@ const Page = () => {
 
           <div className="mt-8 sm:flex sm:items-center sm:justify-between">
             <div className="block sm:hidden">
-              <button className="flex cursor-pointer items-center gap-2 border-b border-gray-400 pb-1 text-gray-900 transition hover:border-gray-600">
+              {/* <button className="flex cursor-pointer items-center gap-2 border-b border-gray-400 pb-1 text-gray-900 transition hover:border-gray-600">
                 <span className="text-sm font-medium"> Filters & Sorting </span>
 
                 <svg
@@ -54,10 +54,10 @@ const Page = () => {
                     d="M8.25 4.5l7.5 7.5-7.5 7.5"
                   />
                 </svg>
-              </button>
+              </button> */}
             </div>
 
-            <div className="hidden sm:block">
+            <div className="sm:block">
               <label htmlFor="SortBy" className="sr-only">
                 Sort By
               </label>
@@ -78,9 +78,8 @@ const Page = () => {
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-8">
             {filteredItems.map((item, index) => (
               <Link
-                className="group relative block"
-                key={index}
                 href={`/products/${item["S. No."]}`}
+                className="group block overflow-hidden"
               >
                 <div className="relative h-[350px] sm:h-[450px]">
                   <Image
@@ -102,26 +101,10 @@ const Page = () => {
                   />
                 </div>
 
-                <div className="absolute inset-0 flex flex-col items-start justify-end p-6">
-                  <h3
-                    className="text-xl font-medium text-black"
-                    style={{ fontWeight: "700" }}
-                  >
-                    {item["Product Name"].split(" ").slice(0, 3).join(" ")}
-                    {}
+                <div className="relative bg-white pt-3">
+                  <h3 className="text-sm text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                    {item["Product Name"]}
                   </h3>
-
-                  <p className="mt-1.5 max-w-[40ch] text-xs text-black">
-                    {item["Product Description "]
-                      .split(" ")
-                      .slice(0, 25)
-                      .join(" ")}{" "}
-                    ...
-                  </p>
-
-                  <span className="mt-3 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white">
-                    Shop Now
-                  </span>
                 </div>
               </Link>
             ))}

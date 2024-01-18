@@ -1,29 +1,29 @@
 // import { data } from "../Data";
-import Announcements from "../components/Announcements";
+// import Announcements from "../components/Announcements";
 import { data } from "../Data";
 import Image from "next/image";
 import ExploreImg from "../components/ExploreImg";
 // import { Slider } from "@nextui-org/react";
-import MySlider from "../components/MySlider";
+// import MySlider from "../components/MySlider";
 import Link from "next/link";
 const explore = [
   {
-    img: "https://framerusercontent.com/images/tQBTH8ujZYEc0aGvhWr5A2mJnM4.png",
-    name: "Men",
+    img: "./1R5A9121.JPG",
+    name: "Knee braces are designed to provide support and stability to the knee joint during high-impact activities and exercises. They are particularly useful for workouts that involve running, jumping, or rapid direction changes, which can put a lot of stress on the knees. By stabilizing the knee joint and distributing the force exerted on the knee, braces can help prevent injuries such as sprains, strains, or ligament tears",
   },
   {
-    img: "https://framerusercontent.com/images/ZPXiTGutFRCSUPaef2HxHHFx40.jpg",
-    name: "Women",
+    img: "./2.JPG",
+    name: "For individuals recovering from a knee injury, knee braces can play a crucial role in the rehabilitation process. They help in limiting movement to a safe range, preventing re-injury, and providing the support needed to perform specific exercises during the recovery phase. This is particularly important for athletes and fitness enthusiasts who are eager to return to their regular training regimen post-injury.",
   },
   {
-    img: "https://markbellslingshot.com/cdn/shop/products/strongsleevesquarter_9b5e1a50-4981-46b3-97b8-44677c3476c9_720x.jpg?v=1679699718",
-    name: "Other",
+    img: "./3.jpeg",
+    name: "For those engaged in strength training, especially exercises that involve heavy lifting like squats or lunges, knee braces can aid in enhancing overall performance. They do so by providing compression, which can increase blood flow and reduce pain and swelling during and after workouts. Additionally, they offer proprioceptive feedback, which can improve the sense of stability and body awareness during exercise.",
   },
 ];
 export default function Home() {
   return (
     <div className="items-center h-min justify-start p-0 relative">
-      <Announcements />
+      {/* <Announcements /> */}
 
       <video src="/video.mp4" autoPlay loop muted />
       <div className="flex flex-col flex-nowrap gap-[40px] h-min justify-start overflow-hidden py-0 px-[24px] sm:px-[40px] mt-[120px]">
@@ -34,8 +34,7 @@ export default function Home() {
           {data.slice(0, 6).map((item, index) => (
             <Link
               href={`/products/${item["S. No."]}`}
-              className="group relative block"
-              key={index}
+              className="group block overflow-hidden"
             >
               <div className="relative h-[350px] sm:h-[450px]">
                 <Image
@@ -57,26 +56,10 @@ export default function Home() {
                 />
               </div>
 
-              <div className="absolute inset-0 flex flex-col items-start justify-end p-6">
-                <h3
-                  className="text-xl font-medium text-black"
-                  style={{ fontWeight: "700" }}
-                >
-                  {item["Product Name"].split(" ").slice(0, 3).join(" ")}
-                  {}
+              <div className="relative bg-white pt-3">
+                <h3 className="text-sm text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                  {item["Product Name"]}
                 </h3>
-
-                <p className="mt-1.5 max-w-[40ch] text-xs text-black">
-                  {item["Product Description "]
-                    .split(" ")
-                    .slice(0, 25)
-                    .join(" ")}{" "}
-                  ...
-                </p>
-
-                <span className="mt-3 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white">
-                  Shop Now
-                </span>
               </div>
             </Link>
           ))}
@@ -100,9 +83,12 @@ export default function Home() {
           <div className="flex flex-col flex-start  flex-shrink-0">
             <div>
               <p className="text-[3rem]">
-                More than just fitness. We empower through lifting. Premium
-                products to reduce risk of injury, expert tips, and a supportive
-                community. Elevate your journey with us.
+                <i>
+                  {" "}
+                  More than just fitness. We empower through lifting. Premium
+                  products to reduce risk of injury, expert tips, and a
+                  supportive community. Elevate your journey with us.
+                </i>
               </p>
             </div>
           </div>
@@ -120,11 +106,11 @@ export default function Home() {
                 <div className="flex-shrink-0">
                   <img
                     className="w-8 h-8 rounded-full"
-                    src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
                     alt="Neil image"
                   />
                   <h5 className="mb-2 text-2xl font-bold tracking-tight ">
-                    Loved It
+                    Premium Quality
                   </h5>
                 </div>
               </div>
@@ -176,10 +162,8 @@ export default function Home() {
                 </svg>
               </div>
               <p className="font-normal ">
-                Upgrade your fitness wardrobe with LiftLife Apparel! Their
-                high-quality, stylish workout gear keeps me comfortable and
-                motivated during my workouts. Join the LiftLife community and
-                take your fitness journey to new heights!
+                Guys, if you want a premium product in this range. Don't think
+                twice. Just go for it. Love this product.
               </p>
             </a>
             <a href="#" className="block max-w-sm p-6 shadow-xl rounded-md">
@@ -187,11 +171,11 @@ export default function Home() {
                 <div className="flex-shrink-0">
                   <img
                     className="w-8 h-8 rounded-full"
-                    src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
                     alt="Neil image"
                   />
                   <h5 className="mb-2 text-2xl font-bold tracking-tight ">
-                    Loved It !!!!
+                    Soft and Premium
                   </h5>
                 </div>
               </div>
@@ -243,10 +227,9 @@ export default function Home() {
                 </svg>
               </div>
               <p className="font-normal ">
-                Upgrade your fitness wardrobe with LiftLife Apparel! Their
-                high-quality, stylish workout gear keeps me comfortable and
-                motivated during my workouts. Join the LiftLife community and
-                take your fitness journey to new heights!
+                Product was delivered in 2 days. From packaging to product the
+                quality was very good. Comfortable to wear, feel premium to
+                touch. Must buy.
               </p>
             </a>
             <a href="#" className="block max-w-sm p-6 shadow-xl rounded-md">
@@ -254,7 +237,7 @@ export default function Home() {
                 <div className="flex-shrink-0">
                   <img
                     className="w-8 h-8 rounded-full"
-                    src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
                     alt="Neil image"
                   />
                   <h5 className="mb-2 text-2xl font-bold tracking-tight ">
@@ -310,10 +293,9 @@ export default function Home() {
                 </svg>
               </div>
               <p className="font-normal text-center sm:text-left">
-                Upgrade your fitness wardrobe with LiftLife Apparel! Their
-                high-quality, stylish workout gear keeps me comfortable and
-                motivated during my workouts. Join the LiftLife community and
-                take your fitness journey to new heights!
+                These work great for compression and support. They fit nicely
+                and they don't slip or fall down. I wear them for 12 hours plus
+                a day and have no issues with comfort.
               </p>
             </a>
             <a href="#" className="block max-w-sm p-6 shadow-xl rounded-md">
@@ -321,11 +303,11 @@ export default function Home() {
                 <div className="flex-shrink-0">
                   <img
                     className="w-8 h-8 rounded-full"
-                    src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
                     alt="Neil image"
                   />
                   <h5 className="mb-2 text-2xl font-bold tracking-tight ">
-                    Loved It
+                    Nice Product!
                   </h5>
                 </div>
               </div>
@@ -376,17 +358,11 @@ export default function Home() {
                   <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
                 </svg>
               </div>
-              <p className="font-normal ">
-                Upgrade your fitness wardrobe with LiftLife Apparel! Their
-                high-quality, stylish workout gear keeps me comfortable and
-                motivated during my workouts. Join the LiftLife community and
-                take your fitness journey to new heights!
-              </p>
+              <p className="font-normal ">Very good product worth it</p>
             </a>
           </div>
         </div>
       </div>
-      <MySlider />
     </div>
   );
 }

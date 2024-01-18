@@ -55,7 +55,7 @@ export function ProductInfo({ productInfo }: any) {
       </div>
 
       <div className="mt-4 flex flex-row gap-6">
-        <button
+        <a
           type="button"
           style={{
             display: "flex",
@@ -65,10 +65,11 @@ export function ProductInfo({ productInfo }: any) {
             padding: "6px",
           }}
           className="border-1 border-gray-500 hover:bg-[#ff9900] hover:text-white"
+          href={productInfo.Amazon}
         >
           <p className="mr-[20px]">Buy on Amazon</p> <SiAmazon fill="#232f3e" />
-        </button>
-        <button
+        </a>
+        <a
           className="border-1 border-gray-500 hover:bg-yellow-400 hover:text-white"
           type="button"
           style={{
@@ -78,10 +79,11 @@ export function ProductInfo({ productInfo }: any) {
             width: "100%",
             padding: "6px",
           }}
+          href={productInfo.Flipkart}
         >
           <p className="mr-[20px]">Buy on Flipkart </p>
           <SiFlipkart fill="#2a55e5" className="text-white" />
-        </button>
+        </a>
       </div>
     </div>
   );
